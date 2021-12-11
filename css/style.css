@@ -34,7 +34,7 @@ header > nav {
     justify-content: center;
     gap: 1.5em;
     line-height: 0;
-    padding: 1em 3.5em;
+    padding: 1em 3em;
 }
 
 .menu > ul > li {
@@ -47,4 +47,32 @@ header > nav {
     color: white;
     text-decoration: none;
     border-radius: .5em;
+}
+
+.flex-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container aside {
+    flex: 1;
+    background-color: rgb(100, 120, 100);
+}
+
+.flex-container main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3em;
+    gap: 1%;
+    flex: 3;
+    background-color: rgb(255, 250, 230);
+}
+
+.shop-item {
+    background-color: white;
+    border-radius: .5em;
+    flex-basis: 32%;
+    border: 2px solid black;
 }
