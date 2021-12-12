@@ -173,7 +173,14 @@ header {
 }
 
 .department-item {
+    display: flex;
+    align-items: center;
+    gap: .8em;
     border-top: .125rem solid rgb(0, 59, 0);
+}
+
+.item-icon {
+    width: 1.5em;
 }
 
 /* Deparment Styling */
