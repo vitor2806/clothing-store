@@ -34,18 +34,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5em;
+    gap: 1.5rem;
     line-height: 0;
-    padding: 1em 10em;
+    padding: 1rem 10rem;
     list-style: none;
 }
 
 #login {
-    padding: 1em 1.5em;
+    padding: 1rem 1.5rem;
     background-color: rgb(2, 63, 0);
     color: white;
     text-decoration: none;
-    border-radius: .5em;
+    border-radius: .5rem;
 }
 
 .flex-container {
@@ -61,9 +61,12 @@ header {
 
 .flex-container main {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    white-space: nowrap;
+    overflow-x: auto;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(6, calc(30% - 40px));
     grid-template-rows: repeat(2, 1fr);
-    padding: 3em;
+    padding: 3rem;
     gap: 1.5%;
     flex: 3;
     background-color: rgb(255, 250, 230);
@@ -72,12 +75,12 @@ header {
 /* Shop Item Container */
 .shop-item {
     background-color: white;
-    border-radius: .5em;
+    border-radius: .5rem;
     display: flex;
     flex-flow: column wrap;
     place-content: center;
-    padding: 1.5em;
-    gap: .7em;
+    padding: 1.3rem 1.0rem;
+    gap: .7rem;
     position: relative;
     transition: box-shadow 500ms ease;
 }
@@ -88,7 +91,7 @@ header {
     background-image: url(https://source.unsplash.com/random);
     background-size: cover;
     background-position: center;
-    border-radius: .5em;
+    border-radius: .325rem;
 }
 
 .shop-item > .item-desc {
@@ -96,7 +99,7 @@ header {
     flex-flow: column wrap;
     place-content: center;
     text-align: center;
-    gap: .3em;
+    gap: .3rem;
 }
 
 .item-desc > .item-content {
@@ -108,10 +111,10 @@ header {
     border: none;
     line-height: 0;
     background-color: rgb(0, 59, 0);
-    padding: 1.2em;
+    padding: 1.2rem;
     width: 100%;
     color: white;
-    border-radius: .5em;
+    border-radius: .5rem;
     font-weight: bold;
     font-size: 1em;
 }
@@ -147,3 +150,9 @@ header {
     color: rgb(0, 59, 0);
 }
 /* Shop Item Container Effects */
+
+@media screen and (min-width: 600px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
