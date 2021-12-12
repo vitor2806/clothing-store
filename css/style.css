@@ -3,7 +3,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+body, html{
     max-width: 100%;
     height: 100vh;
     background-color: rgb(230, 230, 255);
@@ -19,26 +19,24 @@ header {
     align-items: flex-end;
 }
 
-header > nav {
-    width: 100%;
-    border-bottom: .3em solid rgb(0, 59, 0);
-}
-
 .push-right {
     margin-left: auto;
 }
 
-.menu > ul{
+.menu {
+    box-sizing: border-box;
+    width: 100%;
     background-color: white;
+    border-bottom: 3px solid rgb(0, 59, 0);
+}
+
+.menu > ul{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5em;
     line-height: 0;
-    padding: 1em 3em;
-}
-
-.menu > ul > li {
+    padding: 1em 10em;
     list-style: none;
 }
 
@@ -51,7 +49,7 @@ header > nav {
 }
 
 .flex-container {
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }
@@ -62,9 +60,9 @@ header > nav {
 }
 
 .flex-container main {
-    justify-content: center;
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 350px);
     padding: 3em;
     gap: 3%;
     flex: 3;
@@ -75,13 +73,13 @@ header > nav {
 .shop-item {
     background-color: white;
     border-radius: .5em;
-    width: 350px;
-    height: 350px;
     display: flex;
     flex-flow: column wrap;
     place-content: center;
     padding: 1.5em;
     gap: .7em;
+    position: relative;
+    transition: box-shadow 500ms ease;
 }
 
 .shop-item > .item-image {
@@ -119,3 +117,33 @@ header > nav {
 }
 
 /* Shop Item Container */
+
+/* Shop Item Container Effects */
+
+.shop-item::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(0, 59, 0);
+    bottom: 2.5%;
+    height: .250em;
+    width: 0%;
+    transition: 550ms;
+}
+
+.shop-item:focus::before,
+.shop-item:hover::before {
+    width: 65%;
+}
+
+.shop-item:focus,
+.shop-item:hover {
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+}
+
+.item-desc > button:focus,
+.item-desc > button:hover {
+    transition: 500ms ease;
+    background-color: wheat;
+    color: rgb(0, 59, 0);
+}
+/* Shop Item Container Effects */
