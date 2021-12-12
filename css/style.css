@@ -64,7 +64,7 @@ header {
     white-space: nowrap;
     overflow-x: auto;
     grid-auto-flow: column;
-    grid-template-columns: repeat(6, calc(30% - 40px));
+    grid-template-columns: repeat(6, min(350px));
     grid-template-rows: repeat(2, 1fr);
     padding: 3rem;
     gap: 1.5%;
@@ -151,8 +151,3 @@ header {
 }
 /* Shop Item Container Effects */
 
-@media screen and (min-width: 600px) {
-    main {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
