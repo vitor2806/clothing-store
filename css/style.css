@@ -21,6 +21,7 @@ header {
 
 header > nav {
     width: 100%;
+    border-bottom: .3em solid rgb(0, 59, 0);
 }
 
 .push-right {
@@ -61,11 +62,11 @@ header > nav {
 }
 
 .flex-container main {
+    justify-content: center;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     padding: 3em;
-    gap: 1%;
+    gap: 3%;
     flex: 3;
     background-color: rgb(255, 250, 230);
 }
@@ -73,6 +74,76 @@ header > nav {
 .shop-item {
     background-color: white;
     border-radius: .5em;
-    flex-basis: 32%;
-    border: 2px solid black;
+    flex-basis: 30%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    gap: .25em;
+    font-size: 1.5em;
+    position: relative;
+    transition: 500ms;
+}
+
+.shop-item > .item-image {
+    border-radius: .5em;
+    min-height: 250px;
+    width: 100%;
+    background: url('https://source.unsplash.com/random');
+    background-size: cover;
+    background-position: center;
+}
+
+.shop-item > .item-content {
+    max-width: 100%;
+    text-align: center;
+}
+
+.item-content > .item-price {
+    font-size: .9em;
+}
+
+.shop-item > button {
+    cursor: pointer;
+    border: none;
+    line-height: 0;
+    width: 100%;
+    padding: 1.5em 0;
+    border-radius: .5em;
+    font-weight: bold;
+    background-color: rgb(0, 59, 0);
+    color: white;
+    transition: 500ms;
+}
+
+.shop-item > button:focus,
+.shop-item > button:hover {
+    background-color: wheat;
+    color: rgb(0, 59, 0)
+}
+
+main:first-of-type(.shop-item) {
+    overflow: hidden;
+}
+
+.shop-item::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    background-color: rgb(0, 59, 0);
+    border-radius: .5em;
+    height: .1em;
+    width: 0%;
+    transition: 500ms;
+}
+
+.shop-item:focus,
+.shop-item:hover {
+    box-shadow: .5em .5em 0.625em rgba(0, 0, 0, 0.1);
+}
+
+.shop-item:focus,
+.shop-item:hover::after {
+    width: 50%;
 }
