@@ -24,6 +24,7 @@ header {
 }
 
 .menu {
+    z-index: 3;
     box-sizing: border-box;
     width: 100%;
     background-color: white;
@@ -55,10 +56,10 @@ header {
 }
 
 .flex-container aside {
-    z-index: 9999;
+    z-index: 2;
     flex: 1;
-    background-color: rgb(100, 120, 100);
-    box-shadow: -.3em 0 1rem rgba(0, 0, 0, 0.625);
+    background-color: white;
+    box-shadow: -.3em 0 1rem rgba(0, 0, 0, 0.15);
 }
 
 .flex-container main {
@@ -66,12 +67,23 @@ header {
     white-space: nowrap;
     overflow-x: auto;
     grid-auto-flow: column;
-    grid-template-columns: repeat(6, min(350px));
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1, 1fr);
     padding: 3rem;
-    gap: 1rem;
+    gap: 8rem;
     flex: 5;
     background-color: rgb(255, 250, 230);
+}
+
+.department-col {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(min(350px));
+    grid-auto-columns: 350px;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    border-right: .5em solid rgb(0, 59, 0);
+
 }
 
 /* Shop Item Container */
@@ -164,7 +176,7 @@ header {
     list-style: none;
     display: flex;
     flex-flow: column wrap;
-    color: wheat;
+    color: black;
     padding: 1.5rem;
     font-size: 1.2rem;
     line-height: 2;
@@ -175,11 +187,12 @@ header {
 .department-item {
     display: flex;
     align-items: center;
-    gap: .8em;
+    gap: .5em;
     border-top: .125rem solid rgb(0, 59, 0);
 }
 
 .item-icon {
+    margin-left: .5em;
     width: 1.5em;
 }
 
